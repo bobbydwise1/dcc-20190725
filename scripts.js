@@ -8,7 +8,31 @@ Given an integer k and a string s, find the length of the longest substring that
 For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
 */
 
+/*
 
+create some examples:
+string| k | ANSWER
+abcba 2 'bcb'
+ababa 1 any single letter
+goat  3 'goa' or 'oat'
+ohio  4 none
+gold  4 'gold'
+
+1.  Note:  Substring means characters that are adjacent to each other.
+
+Solution:
+some edge cases:
+if k > s.length, the answer is none
+if k === s.length, the answer is 1 only if all chars are unique
+if k === 0, the answer is none
+if k === 1, the answer is 1
+
+other wise, when (0 < k) && (k < s.length),
+a. use a loop.
+b. start another subloop
+c. 
+
+*/
 
 $(document).ready(function() {
   $("#form1").submit(function(event) {
