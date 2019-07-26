@@ -28,16 +28,30 @@ if k === 0, the answer is none
 if k === 1, the answer is 1
 
 other wise, when (0 < k) && (k < s.length),
-a. use a loop.
-b. start another loop
-c. until the end of the string, see if all chars don't match up to k.
-d. store this in an output array.
-e. end the loop
-f. end the loop
-g. in the output array, check the size of each string entry to see if they are the largest.
-h. output the largest.
+
+
 
 */
+
+const searchSub = (yourString) => {
+  outputArray = [];
+  for (i = 0; i<yourString.length; i++) {
+    let regex = new RegExp('[^' + yourString[i] + ']{1,}')
+    let temp = '';
+    for (j = 0; j < 2; j++) {
+      if
+    }
+  }
+  return outputArray;
+}
+
+let myString1 = 'alpha'
+let answer1 = searchSub(myString1)
+console.log('Answer = ',answer1)
+let myString2 = 'aaa'
+let answer2 = searchSub(myString2)
+console.log('Answer = ',answer2)
+
 
 const longestSub = (yourString, k) => {
   console.log(yourString, k)
@@ -45,18 +59,8 @@ const longestSub = (yourString, k) => {
   if (k === 0) {return 'none'};
   if (k === 1) {return yourString[0]}
   if (k === yourString.length) {
-    //put compare code
-  };
-  let char1 = 0;
-  let outputArray = [];
-  for (i = 0; i< yourString.length; i++) {
-    let subOutput = '';
-    let char1 = yourString.charCodeAt(i)-96;
-    for (j = 0; j < k; j++) {
-      
-    }
 
-  }
+  };
 };
 
 $(document).ready(function() {
