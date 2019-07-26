@@ -44,9 +44,19 @@ const longestSub = (yourString, k) => {
   if (k > yourString.length) {return 'none'};
   if (k === 0) {return 'none'};
   if (k === 1) {return yourString[0]}
-  if (k === yourString.length) {return 'made it'
+  if (k === yourString.length) {
+    //put compare code
   };
+  let char1 = 0;
+  let outputArray = [];
+  for (i = 0; i< yourString.length; i++) {
+    let subOutput = '';
+    let char1 = yourString.charCodeAt(i)-96;
+    for (j = 0; j < k; j++) {
+      
+    }
 
+  }
 };
 
 $(document).ready(function() {
