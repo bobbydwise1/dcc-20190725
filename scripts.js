@@ -29,17 +29,34 @@ if k === 1, the answer is 1
 
 other wise, when (0 < k) && (k < s.length),
 a. use a loop.
-b. start another subloop
-c. 
+b. start another loop
+c. until the end of the string, see if all chars don't match up to k.
+d. store this in an output array.
+e. end the loop
+f. end the loop
+g. in the output array, check the size of each string entry to see if they are the largest.
+h. output the largest.
 
 */
+
+const longestSub = (yourString, k) => {
+  console.log(yourString, k)
+  if (k > yourString.length) {return 'none'};
+  if (k === 0) {return 'none'};
+  if (k === 1) {return yourString[0]}
+  if (k === yourString.length) {return 'made it'
+  };
+
+};
 
 $(document).ready(function() {
   $("#form1").submit(function(event) {
     event.preventDefault();
     let input1 = $("#input1").val();
-    let output1 = input1;
+    let input2 = parseInt($("#input2").val());
+    let output1 = longestSub(input1,input2);
+    console.log(output1);
     $('#output-section-1').text(output1);
-    $('#output-section-2').text(output1);
+    $('#output-section-2').text(0);
   });
 });
