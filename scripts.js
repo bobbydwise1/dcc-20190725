@@ -33,35 +33,44 @@ other wise, when (0 < k) && (k < s.length),
 
 */
 
-const searchSub = (yourString) => {
+const searchSub = (yourString, k) => {
   outputArray = [];
-  for (i = 0; i<yourString.length; i++) {
-    let regex = new RegExp('[^' + yourString[i] + ']{1,}')
+  for (i = 0; i<yourString.length-1; i++) {
+    let regex = new RegExp('[^' + yourString[i] + ']{' + k + ',}')
     let temp = '';
-    for (j = 0; j < 2; j++) {
-      if
+    for (j = 0; j < k; j++) {
+      if (yourString[i+j+1] === undefined) {break;}
+      if (yourString[i+j] != yourString[i+j+1]) {temp = temp+yourString[i+j+1]} else {break;}
     }
+    outputArray.push(temp);
   }
   return outputArray;
 }
 
-let myString1 = 'alpha'
-let answer1 = searchSub(myString1)
-console.log('Answer = ',answer1)
-let myString2 = 'aaa'
-let answer2 = searchSub(myString2)
-console.log('Answer = ',answer2)
-
 
 const longestSub = (yourString, k) => {
-  console.log(yourString, k)
   if (k > yourString.length) {return 'none'};
   if (k === 0) {return 'none'};
   if (k === 1) {return yourString[0]}
-  if (k === yourString.length) {
-
+  let pre = searchSub(yourString, k);
+  let length = 0;
+  let answer = 0;
+  console.log('pre', pre)
+  for (i=0; i<pre.length; i++) {
+    if (pre[i].length > length) {
+      answer = pre[i];
+      length = pre[i].length;
+    }
+    console.log('answer =', answer)
   };
+  return answer;
 };
+
+let myString1 = 'abcba'
+let answer1 = searchSub(myString1, 3)
+console.log('Answer = ',answer1)
+let answer2 = longestSub(myString1, 3)
+console.log('Answer = ',answer2)
 
 $(document).ready(function() {
   $("#form1").submit(function(event) {
@@ -71,6 +80,5 @@ $(document).ready(function() {
     let output1 = longestSub(input1,input2);
     console.log(output1);
     $('#output-section-1').text(output1);
-    $('#output-section-2').text(0);
   });
 });
